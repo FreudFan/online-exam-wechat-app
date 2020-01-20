@@ -1,4 +1,4 @@
-package entity;
+package edu.sandau.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,7 @@ public class UserInfo {
 	public UserInfo() {
 		super();
 	}
+
 	//构造方法用CreateUser
 	private UserInfo(String userName, String userId, String userPassword,
 			String mobile, String deviceNo, String email) {
@@ -55,6 +56,7 @@ public class UserInfo {
 		else
 			return "ok";
 	}
+
 	private static String judgeUserName(String userName) {
 		if(userName==null)	
 			return "user name can not be empty!";
@@ -68,18 +70,21 @@ public class UserInfo {
 		else
 			return "ok";
 	}
+
 	private static String judgeUserPassword(String userPassword) {
 		if(userPassword==null)	
 			return "password can not be empty!";
 		else
 			return "ok";
 	}
+
 	private static String judgeMobile(String mobile) {
 		if(mobile==null)	
 			return "mobile can not be empty!";
 		else
 			return "ok";
 	}
+
 	private static String judgeEmail(String email) {
 		if(email==null)	
 			return "email can not be empty!";
@@ -102,12 +107,15 @@ public class UserInfo {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+
 	public void setMoney(double money) {
 		this.money = money;
 	}
+
 	public void addMoney(double add) {
 		money += add;
 	}
+
 	public double getMoney() {
 		return money;
 	}
@@ -120,11 +128,9 @@ public class UserInfo {
 		return mobile;
 	}
 
-
 	public String getCreateTime() {
 		return createTime;
 	}
-
 
 	public String getDeviceNo() {
 		return deviceNo;

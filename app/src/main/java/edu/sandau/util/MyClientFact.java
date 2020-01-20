@@ -5,7 +5,7 @@ import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
 import feign.jaxrs.JAXRSContract;
 
-import service.UserService;
+import edu.sandau.service.UserService;
 
 public class MyClientFact {
 	static MyClientFact inst=new MyClientFact();

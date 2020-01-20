@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.online_exam_app.R;
+import edu.sandau.online_exam.R;
 
 public class MeanActivity extends Activity {
     private EditText account,password;
@@ -19,6 +19,7 @@ public class MeanActivity extends Activity {
     private TextView registerTxT;
     private Button changeUrlBtn;
     private ProgressBar pBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

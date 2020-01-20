@@ -3,17 +3,12 @@ package edu.sandau.util;
 import android.content.Context;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import entity.UserInfo;
+import edu.sandau.entity.UserInfo;
 
 public class Data {
     public static UserInfo user = loadUser();    //登录一次永久保存到手机上

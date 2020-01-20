@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-
-
 import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
@@ -17,16 +15,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.online_exam_app.R;
+import edu.sandau.online_exam.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import edu.sandau.util.Data;
 import edu.sandau.util.MyClientFact;
-import entity.UserInfo;
-import service.UserService;
-
+import edu.sandau.entity.UserInfo;
+import edu.sandau.service.UserService;
 
 public class UserLoginActivity extends Activity {
 
