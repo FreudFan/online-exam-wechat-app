@@ -4,145 +4,114 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserInfo {
-	private String userName;	//中文名
-	private String userId;		//登陆id
-	private String userPassword;//登陆密码
-	private String mobile;		//手机号
-	private String createTime;	//创建日期
-	private String deviceNo;	//设备号
-	private String email;		//邮箱
-	
-	private double money;		//钱，不一定用得上
-	private List<Integer> orderIds;	//订单号们
-	
-	public UserInfo() {
-		super();
+	private Integer id;
+	private String token;
+	private String username;
+	private String realname;
+	private String gender;
+	private String genderName;
+	private String email;
+	private String telephone;
+	private String organization;
+
+	public Integer getId() {
+		return id;
 	}
 
-	//构造方法用CreateUser
-	private UserInfo(String userName, String userId, String userPassword,
-			String mobile, String deviceNo, String email) {
-		super();
-		this.userName = userName;
-		this.userId = userId;
-		this.userPassword = userPassword;
-		this.mobile = mobile;
-		this.deviceNo = deviceNo;
-		this.email = email;
-		
-		orderIds = new ArrayList<Integer>();
-		//createDate在服务器中设置
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public static UserInfo CreateUser(String userName, String userId,String userPassword,
-			String mobile, String email ,String deviceNo) {
-		UserInfo user = new UserInfo(userName,userId,userPassword,mobile,deviceNo,email);
-		user.setMoney(0);
-		return user;
-	}
-	
-	public static String LegalJudge(String userName, String userId,String userPassword,
-			String mobile, String email) {
-		if(!judgeUserName(userName).equals("ok"))
-			return judgeUserName(userName);
-		else if(!judgeUserId(userId).equals("ok"))
-			return judgeUserId(userId);
-		else if(!judgeUserPassword(userPassword).equals("ok"))
-			return judgeUserPassword(userPassword);
-		else if(!judgeMobile(mobile).equals("ok"))
-			return judgeMobile(mobile);
-		else if(!judgeEmail(email).equals("ok"))
-			return judgeEmail(email);
-		else
-			return "ok";
+	public String getToken() {
+		return token;
 	}
 
-	private static String judgeUserName(String userName) {
-		if(userName==null)	
-			return "user name can not be empty!";
-		else
-			return "ok";
-	}
-	//id不能有中文
-	private static String judgeUserId(String userId) {
-		if(userId==null)	
-			return "user id can not be empty!";
-		else
-			return "ok";
+	public void setToken(String token) {
+		this.token = token;
 	}
 
-	private static String judgeUserPassword(String userPassword) {
-		if(userPassword==null)	
-			return "password can not be empty!";
-		else
-			return "ok";
+	public String getUsername() {
+		return username;
 	}
 
-	private static String judgeMobile(String mobile) {
-		if(mobile==null)	
-			return "mobile can not be empty!";
-		else
-			return "ok";
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	private static String judgeEmail(String email) {
-		if(email==null)	
-			return "email can not be empty!";
-		else
-			return "ok";
+	public String getRealname() {
+		return realname;
 	}
 
-	public String getUserName() {
-		return userName;
+	public void setRealname(String realname) {
+		this.realname = realname;
 	}
 
-	public String getUserPassword() {
-		return userPassword;
+	public String getGender() {
+		return gender;
 	}
 
-	public String getUserId() {
-		return userId;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public String getGenderName() {
+		return genderName;
 	}
 
-	public void setMoney(double money) {
-		this.money = money;
+	public void setGenderName(String genderName) {
+		this.genderName = genderName;
 	}
-
-	public void addMoney(double add) {
-		money += add;
-	}
-
-	public double getMoney() {
-		return money;
-	}
-
-	public List<Integer> getOrderIds() {
-		return orderIds;
-	}
-
-	public String getMobile() {
-		return mobile;
-	}
-
-	public String getCreateTime() {
-		return createTime;
-	}
-
-	public String getDeviceNo() {
-		return deviceNo;
-	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(String organization) {
+		this.organization = organization;
+	}
+
+	public String getMajor_id() {
+		return major_id;
+	}
+
+	public void setMajor_id(String major_id) {
+		this.major_id = major_id;
+	}
+
+	public String getClass_id() {
+		return class_id;
+	}
+
+	public void setClass_id(String class_id) {
+		this.class_id = class_id;
+	}
+
+	public Integer getRole() {
+		return role;
+	}
+
+	public void setRole(Integer role) {
+		this.role = role;
+	}
+
+	private String major_id;
+	private String class_id;
+	private Integer role;
+
 }

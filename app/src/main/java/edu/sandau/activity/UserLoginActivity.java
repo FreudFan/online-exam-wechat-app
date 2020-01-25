@@ -26,7 +26,7 @@ import edu.sandau.entity.UserInfo;
 import edu.sandau.service.UserService;
 
 public class UserLoginActivity extends Activity {
-
+    public  static UserInfo loginUser;
     private EditText account,password;
     private Button loginBtn;
     private TextView registerTxT;
@@ -133,10 +133,12 @@ public class UserLoginActivity extends Activity {
                         message = new Message();
                         try{
                             UserService us = MyClientFact.getInstance().getUserService();
-                            Map<String,String> userInfo = new HashMap<String,String>();
-                            userInfo.put("name",account.getText().toString());
-                            userInfo.put("password",password.getText().toString());
-                            UserInfo user = us.login(userInfo);
+                            UserInfo userInfo = new UserInfo();
+                            Map<String,String> userMap = new HashMap<>();
+                            userMap.put("name",account.getText().toString());
+                            userMap.put("password",password.getText().toString());
+                            UserInfo user = us.login(userMap);
+                            loginUser = user;
                             if(user!=null){
                                 Data.user=user;
                                 Data.saveUser(user);

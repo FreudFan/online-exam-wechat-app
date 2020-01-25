@@ -30,7 +30,7 @@ public interface UserService {
 	@Path("/login") //访问localhost(换成服务器ip):8888/rest/auth/login
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    UserInfo login(Map<String, String> userInfo);
+    UserInfo  login( Map<String,String> userMap);
 	
 
 }
