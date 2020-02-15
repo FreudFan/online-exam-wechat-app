@@ -39,8 +39,9 @@ public class UpdateUserNameActivity extends Activity {
                         UserInfo userInfo = UserLoginActivity.loginUser;
                         userInfo.setUsername(name);
                         UserService us = MyClientFact.getInstance().getUserService();
-                        Map<Object,String> map = new HashMap<>();
+                        Map<String,Object> map = new HashMap<>();
                         map.put("username",name);
+                        map.put("id",userInfo.getId());
                         us.updateLogin(map);
                         Intent intent = new Intent();
                         intent.setClass(UpdateUserNameActivity.this, InformationActivity.class);

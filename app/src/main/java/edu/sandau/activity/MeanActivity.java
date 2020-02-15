@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.sandau.activity.myinfo.InformationActivity;
+import edu.sandau.activity.myinfo.WorryTopicActivity;
 import edu.sandau.online_exam.R;
 public class MeanActivity extends Activity implements View.OnClickListener{
 
@@ -124,11 +125,21 @@ public class MeanActivity extends Activity implements View.OnClickListener{
                 userName.setText(UserLoginActivity.loginUser.getRealname());
                 userName.setGravity(Gravity.CENTER);
                 LinearLayout info = (LinearLayout) mViewPager.findViewById(R.id.info);
+                LinearLayout worryTopic = (LinearLayout) mViewPager.findViewById(R.id.worryTopic);
                 info.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent();
                         intent.setClass(MeanActivity.this, InformationActivity.class);
+                        startActivity(intent);
+                        MeanActivity.this.finish();
+                    }
+                });
+                worryTopic.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setClass(MeanActivity.this, WorryTopicActivity.class);
                         startActivity(intent);
                         MeanActivity.this.finish();
                     }

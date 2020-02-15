@@ -4,6 +4,7 @@ import javax.ws.rs.core.Context;
 
 import edu.sandau.activity.UserLoginActivity;
 import edu.sandau.service.UserService;
+import edu.sandau.service.WorryTopicService;
 import feign.Feign;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -44,6 +45,22 @@ public class MyClientFact {
 					}
 				})
 				.target(UserService.class, base_url);
+
+
+		return client1;
+	}
+
+	public WorryTopicService getWorryTopicService() {
+		WorryTopicService client1 = Feign.builder()
+				.contract(new JAXRSContract())
+				.encoder(new GsonEncoder())
+				.decoder(new GsonDecoder()).requestInterceptor(new RequestInterceptor(){
+					@Override
+					public void apply(RequestTemplate template) {
+						template.header("AUTHORIZATION", UserLoginActivity.loginUser.getToken());
+					}
+				})
+				.target(WorryTopicService.class, base_url);
 
 
 		return client1;

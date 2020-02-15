@@ -52,6 +52,7 @@ public class InformationActivity extends Activity {
                 InformationActivity.this.finish();
             }
         });
+
     }
 }
 
