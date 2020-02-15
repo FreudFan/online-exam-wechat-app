@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         >
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/lin_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -27,17 +27,21 @@
             android:background="#ffffff"
             >
             <ImageView
+                android:id="@+id/tv_main"
                 android:layout_width="30dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="30dp" />
+                android:layout_height="40dp"
+                android:src="@drawable/index"
+                />
             <TextView
-                android:id="@+id/tv_main"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
                 android:text="首页"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
+                ></TextView>
+        </FrameLayout>
+        <FrameLayout
             android:id="@+id/lin_two"
             android:layout_width="0dp"
             android:orientation="vertical"
@@ -46,17 +50,21 @@
             android:background="#ffffff"
             >
             <ImageView
+                android:id="@+id/study"
                 android:layout_width="30dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="30dp" />
+                android:layout_height="40dp"
+                android:src="@drawable/study"
+                />
             <TextView
-                android:id="@+id/tv_contact"
                 android:layout_width="match_parent"
-                android:text="联系人"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="学习"
+                ></TextView>
+        </FrameLayout>
+        <FrameLayout
             android:id="@+id/lin_three"
             android:layout_width="0dp"
             android:orientation="vertical"
@@ -65,17 +73,21 @@
             android:background="#ffffff"
             >
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/notice"
+                android:layout_width="32dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="30dp" />
+                android:layout_height="45dp"
+                android:src="@drawable/notice"
+                />
             <TextView
-                android:id="@+id/tv_my"
                 android:layout_width="match_parent"
-                android:text="我的"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="信息"
+                ></TextView>
+        </FrameLayout>
+        <FrameLayout
             android:id="@+id/lin_four"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -84,16 +96,20 @@
             android:background="#ffffff"
             >
             <ImageView
-                android:layout_width="30dp"
+                android:id="@+id/myinfo"
+                android:layout_width="25dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_height="30dp" />
+                android:layout_height="45dp"
+                android:src="@drawable/myinfo"
+                />
             <TextView
-                android:id="@+id/tv_set"
                 android:layout_width="match_parent"
-                android:text="设置"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="我的"
+                ></TextView>
+        </FrameLayout>
     </LinearLayout>
     <!-- 导航和视图的分割线 -->
     <View

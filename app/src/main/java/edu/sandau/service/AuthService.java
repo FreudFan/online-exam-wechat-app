@@ -1,4 +1,4 @@
-package edu.sandau.util;
+package edu.sandau.service;
 
 import java.util.Map;
 
@@ -12,25 +12,28 @@ import javax.ws.rs.core.MediaType;
 
 import edu.sandau.entity.UserInfo;
 
-@Path("users")
+@Path("auth")
 
-public interface UserService {
+public interface AuthService {
+
 	@GET
-    @Path("all")  //访问http://localhost:8888/demo/rest/users/all
+    @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
-    public Map<String, UserInfo> queryAll();
+    Map<String, UserInfo> queryAll();
 
 	@POST
     @Path("/user")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public UserInfo addUser(UserInfo user, @QueryParam("requestid") int requestid);
+    UserInfo addUser(UserInfo user, @QueryParam("requestid") int requestid);
 	
-	@GET
-	@Path("/loginInfo")
+	@POST
+	@Path("/login") //访问localhost(换成服务器ip):8888/rest/auth/login
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-	public UserInfo login(@QueryParam("userAccount") String account, @QueryParam("userPassword") String password);
+    UserInfo  login( Map<String,String> userMap);
+
+
 	
 
 }

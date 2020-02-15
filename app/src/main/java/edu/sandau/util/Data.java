@@ -13,7 +13,7 @@ import edu.sandau.entity.UserInfo;
 public class Data {
     public static UserInfo user = loadUser();    //登录一次永久保存到手机上
     public static String base_url = loadServiceUrl();
-    private static String DEFAULT_URL = "http://192.168.0.102:8888/rest";  //当DEBUG==false时，采用这个地址(ip改为自己服务器的ip)
+    private static String DEFAULT_URL = "http://192.168.0.104:8888/rest";  //当DEBUG==false时，采用这个地址(ip改为自己服务器的ip)
     public static boolean debug = false;    //点击头像三次改为Debug模式，正式发布时应该会注释掉相关代码
     public static boolean demo = true;
 

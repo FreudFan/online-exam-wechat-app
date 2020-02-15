@@ -10,9 +10,44 @@ public class UserInfo {
 	private String realname;
 	private String gender;
 	private String genderName;
+	/***
+	 * 学校
+	 */
+	private String school;
+	/***
+	 * 学院
+	 */
+	private String college;
+	/***
+	 * 专业id
+	 */
+	private String major;
 	private String email;
 	private String telephone;
-	private String organization;
+
+	public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public String getCollege() {
+		return college;
+	}
+
+	public void setCollege(String college) {
+		this.college = college;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
 
 	public Integer getId() {
 		return id;
@@ -78,13 +113,6 @@ public class UserInfo {
 		this.telephone = telephone;
 	}
 
-	public String getOrganization() {
-		return organization;
-	}
-
-	public void setOrganization(String organization) {
-		this.organization = organization;
-	}
 
 	public String getMajor_id() {
 		return major_id;

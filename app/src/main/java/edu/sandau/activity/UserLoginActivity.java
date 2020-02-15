@@ -23,7 +23,7 @@ import java.util.Map;
 import edu.sandau.util.Data;
 import edu.sandau.util.MyClientFact;
 import edu.sandau.entity.UserInfo;
-import edu.sandau.service.UserService;
+import edu.sandau.service.AuthService;
 
 public class UserLoginActivity extends Activity {
     public  static UserInfo loginUser;
@@ -132,7 +132,7 @@ public class UserLoginActivity extends Activity {
 
                         message = new Message();
                         try{
-                            UserService us = MyClientFact.getInstance().getUserService();
+                            AuthService us = MyClientFact.getInstance().getAuthService();
                             UserInfo userInfo = new UserInfo();
                             Map<String,String> userMap = new HashMap<>();
                             userMap.put("name",account.getText().toString());

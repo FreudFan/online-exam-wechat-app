@@ -1,45 +1,40 @@
 package edu.sandau.activity;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.ListFragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.sandau.activity.myinfo.InformationActivity;
 import edu.sandau.online_exam.R;
 public class MeanActivity extends Activity implements View.OnClickListener{
 
-    LinearLayout lintonOne;
-    LinearLayout lintonTwo;
-    LinearLayout lintonThree;
-    LinearLayout lintonFour;
+    FrameLayout lintonOne;
+    FrameLayout lintonTwo;
+    FrameLayout lintonThree;
+    FrameLayout lintonFour;
     PagerAdapter adapter;
-    private TextView tvmain;
-    private TextView tvcontact;
-    private TextView tvmy;
-    private TextView tvset;
+    private ImageView main;
+    private ImageView study;
+    private ImageView notice;
+    private ImageView myInfo;
     ViewPager mViewPager;
-    private List<View> mViews=new ArrayList<>();
+    private List<View> mViews=new ArrayList<View>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,29 +44,29 @@ public class MeanActivity extends Activity implements View.OnClickListener{
     }
 
     private void initViewPager() {
-        lintonOne= (LinearLayout) findViewById(R.id.lin_one);
-        lintonTwo=(LinearLayout) findViewById(R.id.lin_two);
-        lintonThree=(LinearLayout) findViewById(R.id.lin_three);
-        lintonFour=(LinearLayout) findViewById(R.id.lin_four);
+        lintonOne= (FrameLayout) findViewById(R.id.lin_one);
+        lintonTwo=(FrameLayout) findViewById(R.id.lin_two);
+        lintonThree=(FrameLayout) findViewById(R.id.lin_three);
+        lintonFour=(FrameLayout) findViewById(R.id.lin_four);
         lintonOne.setOnClickListener(this);
         lintonTwo.setOnClickListener(this);
         lintonThree.setOnClickListener(this);
         lintonFour.setOnClickListener(this);
-        tvmain =(TextView)findViewById(R.id.tv_main);
-        tvcontact = (TextView)findViewById(R.id.tv_contact);
-        tvmy = (TextView) findViewById(R.id.tv_my);
-        tvset = (TextView)findViewById(R.id.tv_set);
+        main =(ImageView)findViewById(R.id.tv_main);
+        study = (ImageView) findViewById(R.id.study);
+        notice = (ImageView) findViewById(R.id.notice);
+        myInfo = (ImageView) findViewById(R.id.myinfo);
         LayoutInflater inflater=LayoutInflater.from(this);
         mViewPager=(ViewPager) findViewById(R.id.viewpager);
         View view1 = inflater.inflate(R.layout.fragment_index, null);
         View view2 = inflater.inflate(R.layout.fragment_index, null);
-        View view3 = inflater.inflate(R.layout.fragment_my, null);
-        View view4 = inflater.inflate(R.layout.fragment_index, null);
+        View view3 = inflater.inflate(R.layout.fragment_index, null);
+        View view4 = inflater.inflate(R.layout.fragment_my, null);
         mViews.add(view1);
         mViews.add(view2);
         mViews.add(view3);
         mViews.add(view4);
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -79,25 +74,6 @@ public class MeanActivity extends Activity implements View.OnClickListener{
 
             @Override
             public void onPageSelected(int position) {
-//                resetImg();
-//                switch (position){
-//                    case 0:
-//                        mViewPager.setCurrentItem(0);
-//                        tvmain.setTextColor(Color.RED);
-//                        break;
-//                    case 1:
-//                        mViewPager.setCurrentItem(1);
-//                        tvcontact.setTextColor(Color.RED);
-//                        break;
-//                    case 2:
-//                        mViewPager.setCurrentItem(2);
-//                        tvmy.setTextColor(Color.RED);
-//                        break;
-//                    case 3:
-//                        mViewPager.setCurrentItem(3);
-//                        tvset.setTextColor(Color.RED);
-//                        break;
-//                }
             }
 
             @Override
@@ -132,31 +108,32 @@ public class MeanActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        resetImg();
         switch(v.getId()){
             case R.id.lin_one:
-                tvmain.setTextColor(Color.RED);
                 mViewPager.setCurrentItem(0);
                 break;
             case R.id.lin_two:
                 mViewPager.setCurrentItem(1);
-                tvcontact.setTextColor(Color.RED);
                 break;
             case R.id.lin_three:
                 mViewPager.setCurrentItem(2);
-                tvmy.setTextColor(Color.RED);
-                new MyInfoView(mViewPager);
                 break;
             case R.id.lin_four:
                 mViewPager.setCurrentItem(3);
-                tvset.setTextColor(Color.RED);
+                TextView userName = (TextView)mViewPager.findViewById(R.id.realname);
+                userName.setText(UserLoginActivity.loginUser.getRealname());
+                userName.setGravity(Gravity.CENTER);
+                LinearLayout info = (LinearLayout) mViewPager.findViewById(R.id.info);
+                info.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent();
+                        intent.setClass(MeanActivity.this, InformationActivity.class);
+                        startActivity(intent);
+                        MeanActivity.this.finish();
+                    }
+                });
                 break;
         }
-    }
-    private void resetImg() {
-        tvmain.setTextColor(Color.BLACK);
-        tvcontact.setTextColor(Color.BLACK);
-        tvmy.setTextColor(Color.BLACK);
-        tvset.setTextColor(Color.BLACK);
     }
 }
