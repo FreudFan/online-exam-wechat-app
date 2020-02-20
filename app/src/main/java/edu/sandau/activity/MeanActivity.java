@@ -23,25 +23,26 @@ import java.util.List;
 import edu.sandau.activity.myinfo.InformationActivity;
 import edu.sandau.activity.myinfo.WorryTopicActivity;
 import edu.sandau.online_exam.R;
-public class MeanActivity extends Activity implements View.OnClickListener{
+public class MeanActivity extends Activity {
 
-    FrameLayout lintonOne;
-    FrameLayout lintonTwo;
-    FrameLayout lintonThree;
-    FrameLayout lintonFour;
-    PagerAdapter adapter;
-    private ImageView main;
-    private ImageView study;
-    private ImageView notice;
-    private ImageView myInfo;
-    ViewPager mViewPager;
+    private FrameLayout lintonOne;
+    private FrameLayout lintonTwo;
+    private FrameLayout lintonThree;
+    private FrameLayout lintonFour;
+    private PagerAdapter adapter;
+    private ViewPager mViewPager;
     private List<View> mViews=new ArrayList<View>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mean);
+        Intent intent = this.getIntent();
+        int item = intent.getIntExtra("item",0);
         initViewPager();
 
+        if(item == 3) {
+            mViewPager.setCurrentItem(3);
+        }
     }
 
     private void initViewPager() {
@@ -49,14 +50,10 @@ public class MeanActivity extends Activity implements View.OnClickListener{
         lintonTwo=(FrameLayout) findViewById(R.id.lin_two);
         lintonThree=(FrameLayout) findViewById(R.id.lin_three);
         lintonFour=(FrameLayout) findViewById(R.id.lin_four);
-        lintonOne.setOnClickListener(this);
-        lintonTwo.setOnClickListener(this);
-        lintonThree.setOnClickListener(this);
-        lintonFour.setOnClickListener(this);
-        main =(ImageView)findViewById(R.id.tv_main);
-        study = (ImageView) findViewById(R.id.study);
-        notice = (ImageView) findViewById(R.id.notice);
-        myInfo = (ImageView) findViewById(R.id.myinfo);
+        lintonOne.setOnClickListener(onClickEvent);
+        lintonTwo.setOnClickListener(onClickEvent);
+        lintonThree.setOnClickListener(onClickEvent);
+        lintonFour.setOnClickListener(onClickEvent);
         LayoutInflater inflater=LayoutInflater.from(this);
         mViewPager=(ViewPager) findViewById(R.id.viewpager);
         View view1 = inflater.inflate(R.layout.fragment_index, null);
@@ -67,21 +64,7 @@ public class MeanActivity extends Activity implements View.OnClickListener{
         mViews.add(view2);
         mViews.add(view3);
         mViews.add(view4);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
         adapter=new PagerAdapter() {
             @Override
             public Object instantiateItem(ViewGroup container, int position) {
@@ -106,7 +89,7 @@ public class MeanActivity extends Activity implements View.OnClickListener{
         mViewPager.setAdapter(adapter);
     }
 
-
+    private View.OnClickListener onClickEvent  = new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -132,7 +115,7 @@ public class MeanActivity extends Activity implements View.OnClickListener{
                         Intent intent = new Intent();
                         intent.setClass(MeanActivity.this, InformationActivity.class);
                         startActivity(intent);
-                        MeanActivity.this.finish();
+//                        MeanActivity.this.finish();
                     }
                 });
                 worryTopic.setOnClickListener(new View.OnClickListener() {
@@ -141,10 +124,15 @@ public class MeanActivity extends Activity implements View.OnClickListener{
                         Intent intent = new Intent();
                         intent.setClass(MeanActivity.this, WorryTopicActivity.class);
                         startActivity(intent);
-                        MeanActivity.this.finish();
+//                        MeanActivity.this.finish();
                     }
+
                 });
                 break;
         }
     }
+};
+
+
+
 }

@@ -16,7 +16,9 @@
         android:theme="@android:style/Theme.Holo.Light.NoActionBar"
         tools:replace="android:icon, android:theme,android:name">
         <activity android:name="edu.sandau.activity.RegisterActivity"></activity>
-        <activity android:name="edu.sandau.activity.MeanActivity" />
+        <activity android:name="edu.sandau.activity.MeanActivity"
+                  android:launchMode="singleInstance"
+            />
         <activity android:name="edu.sandau.activity.myinfo.InformationActivity" />
         <activity android:name="edu.sandau.activity.myinfo.UpdateUserNameActivity" />
         <activity android:name="edu.sandau.activity.myinfo.WorryTopicActivity" />

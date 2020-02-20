@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import edu.sandau.activity.MeanActivity;
 import edu.sandau.activity.UserLoginActivity;
 import edu.sandau.online_exam.R;
 
@@ -20,6 +22,7 @@ public class InformationActivity extends Activity {
     private TextView user_name;
     private TextView email;
     private TextView phone;
+    private RelativeLayout back_btn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,6 @@ public class InformationActivity extends Activity {
         email.setText("邮箱:" + UserLoginActivity.loginUser.getEmail());
         phone = (TextView) findViewById(R.id.phone);
         phone.setText("手机号:" + UserLoginActivity.loginUser.getTelephone());
-
         user_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +54,17 @@ public class InformationActivity extends Activity {
                 InformationActivity.this.finish();
             }
         });
+        back_btn = findViewById(R.id.back_btn);
+        back_btn.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(InformationActivity.this, MeanActivity.class);
+                startActivity(intent);
+                InformationActivity.this.finish();
+            }
+        });
     }
 }
 

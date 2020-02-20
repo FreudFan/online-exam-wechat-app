@@ -13,6 +13,7 @@ public class WorryTopic {
     private Double topicmark;
     private String analysis;
     private Integer subject_id;
+    private String subjectName;
     private String createtime;
 
     /***
@@ -106,5 +107,13 @@ public class WorryTopic {
 
     public void setOptionList(List<Option> optionList) {
         this.optionList = optionList;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
 }
