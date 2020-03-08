@@ -1,8 +1,7 @@
 package edu.sandau.util;
 
-import javax.ws.rs.core.Context;
-
 import edu.sandau.activity.UserLoginActivity;
+import edu.sandau.service.ExamRecordService;
 import edu.sandau.service.UserService;
 import edu.sandau.service.WorryTopicService;
 import feign.Feign;
@@ -61,11 +60,22 @@ public class MyClientFact {
 					}
 				})
 				.target(WorryTopicService.class, base_url);
-
-
 		return client1;
 	}
 
+	public ExamRecordService getExamRecordService() {
+		ExamRecordService client1 = Feign.builder()
+				.contract(new JAXRSContract())
+				.encoder(new GsonEncoder())
+				.decoder(new GsonDecoder()).requestInterceptor(new RequestInterceptor(){
+					@Override
+					public void apply(RequestTemplate template) {
+						template.header("AUTHORIZATION", UserLoginActivity.loginUser.getToken());
+					}
+				})
+				.target(ExamRecordService.class, base_url);
+		return client1;
+	}
 
 
 	public static void setBase_url(String base_url) {

@@ -22,6 +22,7 @@
         <activity android:name="edu.sandau.activity.myinfo.InformationActivity" />
         <activity android:name="edu.sandau.activity.myinfo.UpdateUserNameActivity" />
         <activity android:name="edu.sandau.activity.myinfo.WorryTopicActivity" />
+        <activity android:name="edu.sandau.activity.myinfo.ExamRecordActivity" />
         <activity android:name="edu.sandau.activity.UserLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

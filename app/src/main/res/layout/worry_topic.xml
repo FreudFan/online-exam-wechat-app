@@ -1,37 +1,23 @@
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:scrollbars="none"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/back_btn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
-    <RelativeLayout
-        android:id="@+id/back_btn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="错题查询"
             android:textSize="35sp"
             android:drawableLeft="@drawable/leftallow"
             />
-    </RelativeLayout>
-
-<LinearLayout
-    android:id="@+id/topic"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    <ListView
+        android:id="@+id/worryTopicList"
+        android:dividerHeight="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
 
-
-</LinearLayout>
-</ScrollView>

@@ -5,6 +5,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.sandau.activity.myinfo.ExamRecordActivity;
 import edu.sandau.activity.myinfo.InformationActivity;
 import edu.sandau.activity.myinfo.WorryTopicActivity;
 import edu.sandau.online_exam.R;
@@ -109,6 +112,8 @@ public class MeanActivity extends Activity {
                 userName.setGravity(Gravity.CENTER);
                 LinearLayout info = (LinearLayout) mViewPager.findViewById(R.id.info);
                 LinearLayout worryTopic = (LinearLayout) mViewPager.findViewById(R.id.worryTopic);
+                LinearLayout quit = (LinearLayout)mViewPager.findViewById(R.id.quit);
+                LinearLayout examRecord = (LinearLayout) mViewPager.findViewById(R.id.examRecord);
                 info.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -127,6 +132,35 @@ public class MeanActivity extends Activity {
 //                        MeanActivity.this.finish();
                     }
 
+                });
+                quit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MeanActivity.this);
+                        builder.setTitle("消息");
+                        builder.setMessage("确定要退出吗?");
+                        builder.setPositiveButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                System.exit(0);
+                            }
+                        });
+                        builder.show();
+                    }
+                });
+                examRecord.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setClass(MeanActivity.this, ExamRecordActivity.class);
+                        startActivity(intent);
+                    }
                 });
                 break;
         }
