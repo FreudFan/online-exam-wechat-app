@@ -19,17 +19,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.ws.rs.core.Variant;
-
 import edu.sandau.activity.MeanActivity;
 import edu.sandau.entity.Page;
 import edu.sandau.online_exam.R;
 import edu.sandau.service.ExamRecordService;
 import edu.sandau.util.MyClientFact;
-
 public class ExamRecordActivity extends Activity {
-
     private ImageView back_btn;
     private Page page;
     private ListView listView;
