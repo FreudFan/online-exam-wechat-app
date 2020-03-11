@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_margin="5dp"
+    android:textSize="15dp"
+    android:id="@+id/description"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    ></TextView>
+
+    <TextView
+        android:textSize="15dp"
+        android:id="@+id/optionList"
+        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="TextView" />
+
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="15dp"
+        android:id="@+id/correctkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="15dp"
+        android:id="@+id/worryanswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="15dp"
+        android:id="@+id/analysis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="15dp"
+        android:id="@+id/subjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+    <TextView
+        android:layout_margin="5dp"
+        android:textSize="15dp"
+        android:id="@+id/createtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+</LinearLayout>
