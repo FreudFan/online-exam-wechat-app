@@ -1,0 +1,16 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+<view class="welcome">欢迎使用</view>
+<form class="register" bindsubmit="register">
+  <view class="fRow">用户名:
+    <input name="userName" class="inputRegister" auto-focus></input>
+  </view>
+  <view class="fRow">邮箱：
+    <input name="email" class="inputRegister"></input>
+  </view>
+  <view class="fRow">手机：
+    <input name="phoneNumber" class="inputRegister" type="number"></input>
+  </view>
+  <button class="btnRegister" form-type="submit">注册</button>
+</form>
+</view>

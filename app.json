@@ -1,14 +1,39 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/loading/loading",
+    "pages/exam/exam",
+    "pages/history/history",
+    "pages/myInfo/myInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "在线考试",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/exam/exam",
+      "text": "考试",
+      "iconPath": "images/exam.png",
+      "selectedIconPath": "images/exam.png"
+    },
+    {
+      "pagePath": "pages/history/history",
+      "text": "历史",
+      "iconPath": "images/history.png",
+      "selectedIconPath": "images/history.png"
+    },
+    {
+      "pagePath": "pages/myInfo/myInfo",
+      "text": "我的",
+      "iconPath": "images/myInfo.png",
+      "selectedIconPath": "images/myInfo.png"
+    }
+    ]
+  }
 }

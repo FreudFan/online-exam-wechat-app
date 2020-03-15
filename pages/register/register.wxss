@@ -1,0 +1,32 @@
+/* pages/register/register.wxss */
+.welcome{
+  width:150rpx;
+  margin:0rpx auto;
+  margin-bottom: 50px;
+}
+.fRow{
+  flex-direction: row;
+  width:100%;
+  margin: 0 auto;
+}
+.inputRegister{
+  width:99%;
+  border: 1rpx solid rgb(236, 236, 236);
+  border-radius: 5px;
+  margin:10rpx auto;
+}
+.inputRegister :hover{
+  background-color: rgba(253, 242, 147, 0.075);
+  transition: 0.2s;
+}
+.btnRegister{
+  width: 80%;
+  height:40px;
+  line-height: 40px;
+  margin-top:30px;
+}
+.button-hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transition: 0.2s;
+}

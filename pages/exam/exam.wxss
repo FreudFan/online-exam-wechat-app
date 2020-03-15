@@ -1,0 +1,18 @@
+/* pages/exam/exam.wxss */
+.title{
+  margin-top: -150rpx;
+}
+.inputText{
+  border: 1rpx solid rgb(179, 179, 179);
+  border-radius: 5px;
+}
+.formView{
+  display: flex;
+  flex-flow: row;
+}
+.btnFind{
+  height:56rpx;
+  line-height: 55rpx;
+  font-size: 30rpx;
+  margin-left: 15rpx;
+}

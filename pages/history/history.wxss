@@ -1,0 +1,22 @@
+/* pages/history/history.wxss */
+.title{
+  margin-top:-100rpx;
+  margin-bottom: 100rpx;
+}
+.courseItem{
+  display: flex;
+  flex-flow: row;
+  width:600rpx;
+  height: 70rpx;
+  margin: 5rpx auto;
+  line-height: 70rpx;
+  text-align: center;
+  border: 1rpx solid #ececec;
+  border-radius: 10px;
+}
+.courseId{
+  width: 50%;
+}
+.courseName{
+  width: 50%;
+}

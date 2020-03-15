@@ -1,0 +1,10 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+<label class="title">我的课程</label>
+<view wx:for="{{courseId}}">
+  <view class="courseItem">
+    <view class="courseId">{{item.id}}</view>
+    <view class="courseName">{{item.name}}</view>
+  </view>
+</view>
+</view>

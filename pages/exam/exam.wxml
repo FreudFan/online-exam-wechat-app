@@ -1,0 +1,10 @@
+<!--pages/exam/exam.wxml-->
+<view class="container">
+<label class="title">课程号</label>
+  <form bindsubmit="findByCourseId" class="formFind">
+  <view class="formView">
+      <input name="courseId" class="inputText" placeholder="在此输入课程号" placeholder-style="color:#ececec;"></input>
+      <button form-type="submit" class="btnFind">查找</button>
+    </view>
+  </form>
+</view>
