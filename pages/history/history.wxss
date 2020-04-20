@@ -1,0 +1,28 @@
+/* pages/history/history.wxss */
+.title{
+  width:175rpx;
+  margin: 50rpx auto;
+  font-size: 45rpx;
+}
+.courseItem{
+  display: flex;
+  flex-flow: row;
+  width:601.5rpx;
+  height: 70rpx;
+  margin: 10rpx auto;
+  line-height: 70rpx;
+  text-align: center;
+  border: 1rpx solid #777777;
+  border-radius: 10px;
+}
+.courseItem:hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transition: 0.2s;
+}
+.courseId{
+  width: 50%;
+}
+.courseName{
+  width: 50%;
+}

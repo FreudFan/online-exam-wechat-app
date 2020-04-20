@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/loading/loading",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/exam/exam",
+    "pages/history/history",
+    "pages/myInfo/myInfo",
+    "pages/historyTest/historyTest",
+    "pages/test/test",
+    "pages/doTest/doTest"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2e5e86",
+    "navigationBarTitleText": "在线考试",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#ececec",
+    "selectedColor": "#2e5e86",
+    "list": [
+      {
+        "pagePath": "pages/exam/exam",
+        "text": "考试",
+        "iconPath": "images/exam.png",
+        "selectedIconPath": "images/sExam.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/sHistory.png"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我的",
+        "iconPath": "images/myInfo.png",
+        "selectedIconPath": "images/sMyInfo.png"
+      }
+    ]
+  }
+}

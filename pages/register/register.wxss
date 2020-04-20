@@ -1,0 +1,36 @@
+/* pages/register/register.wxss */
+.welcome{
+  width:180rpx;
+  margin:auto;
+  margin-bottom: 50px;
+  margin-top: 20%;
+  font-size:45rpx;
+}
+.fRow{
+  width:80%;
+  margin-left: 22%;
+}
+.inputRegister{
+  width:70%;
+  height: 51rpx;
+  border: 1rpx solid rgba(107, 107, 107, 0.288);
+  border-radius: 5px;
+  margin-top:10rpx;
+  margin-bottom: 10rpx;
+}
+.btnRegister{
+  margin-top:30px;
+  margin-bottom: 20%;
+}
+.button-hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transition: 0.2s;
+}
+.containVerify{
+  display: flex;
+  flex-flow: row;
+}
+button{
+  background-color: rgba(124, 124, 124, 0.288);
+}

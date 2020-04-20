@@ -1,0 +1,33 @@
+<!--pages/register/register.wxml-->
+<view class="welcome">欢迎使用</view>
+<form class="register" bindsubmit="register">
+  <view class="fRow">用户名:
+    <input name="userName" class="inputRegister" auto-focus></input>
+  </view>
+  <view class="fRow">密码：
+    <input name="password1" class="inputRegister" password="true"></input>
+  </view>
+  <view class="fRow">请再次输入密码：
+    <input name="password2" class="inputRegister" password="true"></input>
+  </view>
+  <view class="fRow">真实姓名：
+    <input name="realName" class="inputRegister"></input>
+  </view>
+  <view class="fRow">邮箱：
+    <form bindsubmit="verifyEmail">
+      <view class="containVerify">
+        <input name="email" class="inputRegister"></input>
+        <button size="mini" class="verify" form-type="submit">验证</button>
+      </view>
+    </form>
+  </view>
+  <view class="fRow">手机：
+    <form bindsubmit="verifyPhoneNumber">
+      <view class="containVerify">
+        <input name="phoneNumber" class="inputRegister" type="number"></input>
+        <button size="mini" class="verify" form-type="submit">验证</button>
+      </view>
+    </form>
+  </view>
+  <button class="btnRegister" form-type="submit">注册</button>
+</form>
