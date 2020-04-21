@@ -1,4 +1,5 @@
 //app.js
+const server='http://192.168.31.168:8888'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -34,6 +35,25 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    url:{
+      register: server +'/rest/auth/register',
+      login: server +'/rest/auth/wechat/login',
+      showSubject: server +'/rest/exam/record/showSubject',
+      open:server+'/rest/auth/open',
+      show:server+'/rest/exam/paper/show',
+      start:server+'/rest/exam/record/start',
+      subShow: server+'/rest/common/sub/show',
+    },
+    token:null,
+  },  
+})
+var app = getApp()
+wx.getStorage({
+  key: 'token',
+  success: function (res) { 
+    console.log(res);
+    app.globalData.token=res.data
+    console.log(app.globalData.token)
+  },
 })

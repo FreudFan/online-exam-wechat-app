@@ -1,4 +1,5 @@
 // pages/history/history.js
+const app=getApp();
 Page({
 
   /**
@@ -17,12 +18,12 @@ Page({
   getCourseId:function(){
     var self = this;
     wx.request({
-      url: 'http://192.168.31.168:8888/rest/exam/record/showSubject',
+      url:app.globalData.url.showSubject,
       data:{
         userId:'1'
       },
       header: {
-        'content-type': 'application/json'
+        'Authorization': app.globalData.token
       },
       method:'POST',
       success:function(res){

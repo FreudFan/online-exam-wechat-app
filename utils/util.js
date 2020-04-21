@@ -1,3 +1,4 @@
+const app = getApp();
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -15,5 +16,30 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  login: login
+}
+function login(){
+  wx.login({
+    success(res) {
+      if (res.code) {
+        wx.request({
+          url: app.globalData.url.open,
+          method: 'GET',
+          header: {
+            'Authorization':res.code
+          },
+          success: function (res) {
+            //console.log(res)
+            wx.setStorage({
+              key: 'token',
+              data: res.data,
+            })
+          }
+        })
+      } else {
+        console.log('登录失败！' + res.errMsg)
+      }
+    }
+  })
 }

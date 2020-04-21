@@ -1,10 +1,17 @@
 <!--pages/exam/exam.wxml-->
-<view class="container">
-<label class="title">课程号</label>
-  <form bindsubmit="findByCourseId" class="formFind">
+<view class="title" >选择课程</view>
+  <!--<form bindsubmit="findByCourseId" class="formFind">
   <view class="formView">
-      <input name="courseId" class="inputText" placeholder="在此输入课程号" placeholder-style="color:#ececec;"></input>
-      <button form-type="submit" class="btnFind">查找</button>
+      <input name="courseId" class="inputText" placeholder="在此输入课程号" placeholder-style="color:#ececec;text-align:center;"></input>
+      <button form-type="submit" class="btnFind" size="mini">查找</button>
     </view>
-  </form>
+  </form>-->
+
+<view wx:for="{{courseList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+  <view class="courseItem" data-index="{{index}}" bindtap="openActionSheet">
+    <view class="courseId" name="courseId">{{item.id}}</view>
+    <view class="courseName" name="courseName">{{item.name}}</view>
+  </view>
+  <mp-actionSheet bindactiontap="openCourse" show="{{item.showActionsheet}}" actions="{{groups}}" title="试卷难度" data-listid="{{index}}">
+</mp-actionSheet>
 </view>

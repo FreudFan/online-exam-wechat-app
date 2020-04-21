@@ -1,18 +1,24 @@
 /* pages/history/history.wxss */
 .title{
-  margin-top:-100rpx;
-  margin-bottom: 100rpx;
+  width:175rpx;
+  margin: 50rpx auto;
+  font-size: 45rpx;
 }
 .courseItem{
   display: flex;
   flex-flow: row;
-  width:600rpx;
+  width:601.5rpx;
   height: 70rpx;
-  margin: 5rpx auto;
+  margin: 10rpx auto;
   line-height: 70rpx;
   text-align: center;
-  border: 1rpx solid #ececec;
+  border: 1rpx solid #777777;
   border-radius: 10px;
+}
+.courseItem:hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transition: 0.2s;
 }
 .courseId{
   width: 50%;

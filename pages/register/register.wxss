@@ -1,32 +1,36 @@
 /* pages/register/register.wxss */
 .welcome{
-  width:150rpx;
-  margin:0rpx auto;
+  width:180rpx;
+  margin:auto;
   margin-bottom: 50px;
+  margin-top: 20%;
+  font-size:45rpx;
 }
 .fRow{
-  flex-direction: row;
-  width:100%;
-  margin: 0 auto;
+  width:80%;
+  margin-left: 22%;
 }
 .inputRegister{
-  width:99%;
-  border: 1rpx solid rgb(236, 236, 236);
+  width:70%;
+  height: 51rpx;
+  border: 1rpx solid rgba(107, 107, 107, 0.288);
   border-radius: 5px;
-  margin:10rpx auto;
-}
-.inputRegister :hover{
-  background-color: rgba(253, 242, 147, 0.075);
-  transition: 0.2s;
+  margin-top:10rpx;
+  margin-bottom: 10rpx;
 }
 .btnRegister{
-  width: 80%;
-  height:40px;
-  line-height: 40px;
   margin-top:30px;
+  margin-bottom: 20%;
 }
 .button-hover{
   background-color: rgb(37, 37, 37);
   color: white;
   transition: 0.2s;
+}
+.containVerify{
+  display: flex;
+  flex-flow: row;
+}
+button{
+  background-color: rgba(124, 124, 124, 0.288);
 }

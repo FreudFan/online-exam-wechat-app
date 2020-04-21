@@ -1,11 +1,13 @@
 // pages/loading/loading.js
+const app=getApp();
+var utils = require("../../utils/util.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    //token:null
   },
 
   /**
@@ -15,36 +17,45 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-
+    utils.login()
+    /*var self=this
+    wx.getStorage({
+      key: 'token',
+      success: function(res) {
+        console.log(res);
+        self.setData({
+          token: res.data,
+        })
+      },
+    })*/
     wx.login({
       success(res) {
-        console.log(res.code);
         if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'http://192.168.31.168:8888/rest/auth/wechat/login',
-            method:'POST',
-            data: {
-              code: res.code
-            },
-            header: {
-              'content-type': 'application/json'
-            },
-            success:function(user) {
-              console.log(user.data);
-              /*if(res.data==true){
-                wx.reLaunch({
-                  url: '/pages/exam/exam',
-                })
-              }
-              else if(res.data){ 
-                wx.reLaunch({
-                  url: '/pages/register/register',
-                })
-              }*/
-            }
+          //console.log(self.data.token),
+          wx.request({    
+                  url:app.globalData.url.login,
+                  data:{
+                    code:res.code
+                  },
+                  method: 'POST',
+                  header: {
+                    'Authorization':app.globalData.token
+                  },
+                  success:function(user) {
+                    console.log(user);
+                    if (user.statusCode == 401){
+                      wx.reLaunch({
+                        url: '/pages/register/register',
+                      })
+                    }
+                    else if (user.statusCode == 200){ 
+                      wx.reLaunch({
+                        url: '/pages/exam/exam',
+                      })
+                    }
+                  }
           })
-        } else {
+        }else {
           console.log('登录失败！' + res.errMsg)
         }
       }
