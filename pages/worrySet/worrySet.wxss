@@ -1,0 +1,24 @@
+/* pages/worrySet/worrySet.wxss */
+.title{
+  width:100%;
+  margin: 50rpx auto;
+  text-align: center;
+  font-size: 45rpx;
+}
+.wrong{
+  display: flex;
+  flex-flow: row;
+  width:95%;
+  margin:20rpx auto;
+  background-color:#97cffd;
+  border: 1px solid #2e5e86;
+  border-radius:8px;
+}
+.correctAnswer{
+  width:50%;
+  text-align: center;
+}
+.wrongAnswer{
+  width:50%;
+  text-align: center;
+}

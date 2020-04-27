@@ -1,1 +1,43 @@
 /* pages/historyTest/historyTest.wxss */
+/* pages/test/test.wxss */
+.title{
+  width:100%;
+  margin: 50rpx auto;
+  text-align: center;
+  font-size: 45rpx;
+}
+.btnShowSet{
+  margin-right: -80rpx;
+}
+.item{
+  display: flex;
+  flex-flow: row;
+  width:601.5rpx;
+  height: 70rpx;
+  margin: 10rpx auto;
+  line-height: 70rpx;
+  text-align: center;
+  border: 1rpx solid #777777;
+  border-radius: 10px;
+}
+.item:hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transition: 0.2s;
+}
+.itemId{
+  width: 20%;
+  text-align: center;
+}
+.itemName{
+  width: 40%;
+  text-align: center;
+}
+.itemDifficult{
+  width:20%;
+  text-align: center;
+}
+.itemScore{
+  width: 20%;
+  text-align: center;
+}

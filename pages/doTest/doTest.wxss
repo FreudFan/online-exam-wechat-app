@@ -1,1 +1,18 @@
 /* pages/doTest/doTest.wxss */
+.paper{
+  width: 90%;
+  margin:0 auto;
+}
+.title{
+  width: 50%;
+  text-align: center;
+  margin: 20rpx auto;
+  border-bottom: 1px solid black;
+}
+.option{
+  width:100%;
+}
+.submitBtn{
+  margin-top:50rpx;
+  margin-bottom: 45rpx;
+}

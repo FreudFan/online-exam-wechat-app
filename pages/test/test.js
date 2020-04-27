@@ -34,10 +34,13 @@ Page({
       },
       success:function(res){
         console.log(res)
-        self.setData({
-          testPaper: res.data.rows,
-          subject:res.data.rows[0].subjectName
-        })
+        if (res.data.rows.length!=0)
+        {
+          self.setData({
+            testPaper: res.data.rows,
+            subject:res.data.rows[0].subjectName
+          })
+        }
       }
     })
   },

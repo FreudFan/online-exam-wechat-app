@@ -1,7 +1,7 @@
 <!--pages/history/history.wxml-->
-<view class="title" >试卷记录</view>
+<view class="title" >历史记录</view>
 <view wx:for="{{courseId}}">
-  <view class="courseItem">
+  <view class="courseItem" bindtap="showRecordPaper" data-courseId="{{item.id}}" data-courseName="{{item.name}}">
     <view class="courseId">{{item.id}}</view>
     <view class="courseName">{{item.name}}</view>
   </view>

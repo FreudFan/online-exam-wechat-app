@@ -1,0 +1,9 @@
+<!--pages/worrySet/worrySet.wxml-->
+<view class="title">{{courseName}}错题集</view>
+<view wx:for="{{worrySet}}" wx:for-index="index">
+  <view>{{index+1}}. {{item.description}}</view>
+  <view wx:for="{{item.optionList}}">
+    <view>{{item.name}}. {{item.content}}</view>
+  </view>
+    <view class="wrong"><view class="correctAnswer">本题答案：{{item.correctkey}}</view><view class="wrongAnswer">你选择了：{{item.worryanswer}}</view></view>
+</view>

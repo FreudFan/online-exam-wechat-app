@@ -1,6 +1,7 @@
 <!--pages/test/test.wxml-->
-<view class="title">{{subject}}</view>
-<view class="item" wx:for="{{testPaper}}" bindtap="doTest" data-index="{{index}}">
+<view wx:if="{{testPaper.length!=null}}" class="title">{{subject}}</view>
+<view wx:if="{{testPaper==null}}" class="title">无该难度的试卷</view>
+<view wx:if="{{testPaper.length!=null}}" class="item" wx:for="{{testPaper}}" bindtap="doTest" data-index="{{index}}">
   <view class="itemId">{{item.id}}</view>
   <view class="itemName">{{item.name}}</view>
   <view class="itemScore">{{item.totalScore}}分</view>

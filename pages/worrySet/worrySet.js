@@ -1,4 +1,4 @@
-// pages/historyTest/historyTest.js
+// pages/worrySet/worrySet.js
 const app = getApp()
 var utils = require("../../utils/util.js")
 Page({
@@ -7,9 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+      worrySet:[],
       courseName:null,
-      recordPaper:[],
-      courseId:null,
   },
 
   /**
@@ -17,41 +16,32 @@ Page({
    */
   onLoad: function (options) {
       var self=this
+      console.log(options)
       var courseId=options.courseId
-      self.setData({
-        courseId:[courseId]
+      var courseName = options.courseName
+      this.setData({
+        courseName:[courseName],
       })
-      var courseName=options.courseName
-      self.setData({
-        courseName:[courseName]
-      })
-      //console.log(options)
-    wx.request({
-      url: app.globalData.url.recordShow,
-      method: 'POST',
-      data: {
-          subjectId: courseId,
-      },
-      header: {
-        'Authorization': app.globalData.token
-      },
-      success: function (res) {
-        console.log(res)
-        if (res.data.length != 0) {
-          self.setData({
-            recordPaper: res.data,
-          })
+      wx.request({
+        url: app.globalData.url.worrySetShow,
+        method: 'POST',
+        data: {
+          option:{
+              subject_id: courseId,
+            }
+        },
+        header: {
+          'Authorization': app.globalData.token
+        },
+        success: function (res) {
+          console.log(res)
+          if (res.data.length != 0) {
+            self.setData({
+              worrySet: res.data.rows,
+            })
+          }
         }
-      }
-    })
-  },
-
-  showWrongTopicSet:function(){
-    var courseId=this.data.courseId
-    var courseName = this.data.courseName
-    wx.navigateTo({
-      url: '/pages/worrySet/worrySet?courseId=' + courseId + '&courseName=' + courseName,
-    })
+      })
   },
 
   /**

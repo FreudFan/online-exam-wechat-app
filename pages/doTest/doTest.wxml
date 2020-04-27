@@ -1,2 +1,33 @@
 <!--pages/doTest/doTest.wxml-->
-<text>pages/doTest/doTest.wxml</text>
+<view class="paper">
+  <form bindsubmit="formSubmit">
+      <view wx:if="{{tfList.length!=0}}" class="title">判断题</view>
+      <view wx:for="{{tfList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+          <text>{{index+1}}. {{item.description}}</text>
+          <radio-group name="{{item.id}}" bindchange="radioChange" data-topicId="{{item.id}}">
+            <radio class="option" wx:for-items="{{item.optionsList}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                <text>{{item.content}}</text>
+            </radio>
+          </radio-group>
+      </view>
+      <view wx:if="{{singleList.length!=0}}" class="title">单选题</view>
+      <view wx:for="{{singleList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+          <text>{{index+1}}. {{item.description}}</text>
+          <radio-group name="{{item.id}}" bindchange="radioChange" data-topicId="{{item.id}}">
+            <radio class="option" wx:for-items="{{item.optionsList}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                <text>{{item.content}}</text>
+            </radio>
+          </radio-group>
+      </view>
+      <view wx:if="{{mutiList.length!=0}}" class="title">多选题</view>
+      <view wx:for="{{mutiList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+          <text>{{index+1}}. {{item.description}}</text>
+          <checkbox-group name="{{item.id}}" bindchange="checkboxChange" data-topicId="{{item.id}}">
+              <label wx:for="{{item.optionsList}}">
+                  <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.content}}
+              </label>
+          </checkbox-group>
+      </view>
+      <button class="submitBtn" form-type="submit">提交试卷</button>
+  </form>
+  </view>

@@ -1,0 +1,14 @@
+/* pages/showScore/showScore.wxss */
+.score{
+  width:100%;
+  text-align: center;
+  margin-top:45%;
+  color: red;
+  font-size: 30px;
+}
+.chinese{
+  color:black;
+}
+button{
+  margin:300rpx auto;
+}

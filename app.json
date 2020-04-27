@@ -8,12 +8,14 @@
     "pages/myInfo/myInfo",
     "pages/historyTest/historyTest",
     "pages/test/test",
-    "pages/doTest/doTest"
+    "pages/doTest/doTest",
+    "pages/showScore/showScore",
+    "pages/worrySet/worrySet"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2e5e86",
-    "navigationBarTitleText": "在线考试",
+    "navigationBarTitleText": "智云宝盒",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

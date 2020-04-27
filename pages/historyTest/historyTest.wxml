@@ -1,2 +1,13 @@
 <!--pages/historyTest/historyTest.wxml-->
-<text>pages/historyTest/historyTest.wxml</text>
+<view wx:if="{{recordPaper.length!=null}}" class="title">{{courseName}}
+<button class="btnShowSet" size="mini" bindtap="showWrongTopicSet">错题集</button>
+</view>
+<view wx:if="{{recordPaper==null}}" class="title">无已完成试卷</view>
+<view wx:if="{{recordPaper.length!=null}}" class="item" wx:for="{{recordPaper}}" bindtap="showPaper">
+  <view class="itemId">{{item.examId}}</view>
+  <view class="itemName">{{item.name}}</view>
+  <view class="itemDifficult" wx:if="{{item.difficult==0}}">简单</view>
+  <view class="itemDifficult" wx:if="{{item.difficult==1}}">普通</view>
+  <view class="itemDifficult" wx:if="{{item.difficult==2}}">困难</view>
+  <view class="itemScore">{{item.score}}分</view>
+</view>

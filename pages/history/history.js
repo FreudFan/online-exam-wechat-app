@@ -19,9 +19,6 @@ Page({
     var self = this;
     wx.request({
       url:app.globalData.url.showSubject,
-      data:{
-        userId:'1'
-      },
       header: {
         'Authorization': app.globalData.token
       },
@@ -32,6 +29,14 @@ Page({
             courseId:res.data,
         })
       }
+    })
+  },
+  showRecordPaper:function(e){
+    //console.log(e)
+    var courseId=e.currentTarget.dataset.courseid
+    var courseName = e.currentTarget.dataset.coursename
+    wx.navigateTo({
+      url: '/pages/historyTest/historyTest?courseId=' + courseId+'&courseName='+courseName,
     })
   },
 })

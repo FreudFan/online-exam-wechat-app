@@ -1,0 +1,7 @@
+<!--pages/showScore/showScore.wxml-->
+<view class="score">
+<text class="chinese">本次得分：</text>
+{{score}}
+<text class="chinese">分</text>
+</view>
+<button bindtap="backToExam">返回首页</button>
